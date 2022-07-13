@@ -67,11 +67,12 @@ class build_ext(build_ext_st):
             modname = ext.compiledname.split('.')[-1]
             filename = ext.compiledname + self.get_ext_filename(fullname) \
                                               .split(modname)[-1]
+            destname = (Path(cmd.build_lib) / pdir / filename).resolve()
             copy_file((Path(buildpath) / filename).resolve(),
-                      (Path(pdir) / filename).resolve(), verbose=self.verbose,
+                      destname, verbose=self.verbose,
                 dry_run=self.dry_run
             )
             # end of adapted code from setuptools/command/build_ext.py.
-
-        # Normal build.
-        super().build_extension(ext)
+        else:
+            # Normal build.
+            super().build_extension(ext)
