@@ -64,8 +64,9 @@ class build_ext(build_ext_st):
             cmd = self.get_finalized_command('build_py')
             fullname = self.get_ext_fullname(ext.name)
             pdir = cmd.get_package_dir('.'.join(fullname.split('.')[:-1]))
+            modname = ext.compiledname.split('.')[-1]
             filename = ext.compiledname + self.get_ext_filename(fullname) \
-                                              .split(ext.compiledname)[-1]
+                                              .split(modname)[-1]
             copy_file((Path(buildpath) / filename).resolve(),
                       (Path(pdir) / filename).resolve(), verbose=self.verbose,
                 dry_run=self.dry_run
