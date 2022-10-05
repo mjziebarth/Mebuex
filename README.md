@@ -56,6 +56,11 @@ Mebuex is licensed under the MIT license (see the LICENSE file).
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### [1.1.1] - 2022-10-05
+#### Changed
+ - Add a more informative error message if the directory to copy the built
+   extension to does not exist.
+
 ### [1.1.0] - 2022-07-13
 #### Changed
  - Fixed empty lib being copied to wheel directory instead of Meson-compiled

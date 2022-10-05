@@ -67,7 +67,13 @@ class build_ext(build_ext_st):
             modname = ext.compiledname.split('.')[-1]
             filename = ext.compiledname + self.get_ext_filename(fullname) \
                                               .split(modname)[-1]
-            destname = (Path(cmd.build_lib) / pdir / filename).resolve()
+            destpath = Path(cmd.build_lib) / pdir
+            if not destpath.is_dir():
+                raise RuntimeError("Cannot copy built extension because the "
+                                   "target directory does not exist. This "
+                                   "likely indicates a missing sub-package in "
+                                   "the setup configuration.")
+            destname = (destpath / filename).resolve()
             copy_file((Path(buildpath) / filename).resolve(),
                       destname, verbose=self.verbose,
                 dry_run=self.dry_run
