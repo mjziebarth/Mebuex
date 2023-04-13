@@ -11,7 +11,22 @@ description = "Combining build_ext with the Meson build system"
 dependencies = [
     "meson"
 ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Framework :: Setuptools Plugin",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Software Development :: Build Tools"
+]
+readme = "README.md"
 license = {text="MIT"}
+
+[project.urls]
+"Homepage" = "https://github.com/mjziebarth/Mebuex"
+"Bug Tracker" = "https://github.com/mjziebarth/Mebuex/issues"
 
 [tool.setuptools]
 packages = ["mebuex"]
