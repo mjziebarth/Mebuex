@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61", "wheel", "cython", "mebuex"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mebuexexample"
+version = "1.0.0"
+authors = [
+    {name = "Your Name", email = "someone@example.com"},
+]
+description = "A Mebuex test project."
+dependencies = [
+    "numpy",
+    "cython"
+]
+
+[tool.setuptools]
+packages = ["mebuexexample"]
