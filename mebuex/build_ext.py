@@ -72,7 +72,9 @@ class build_ext(build_ext_st):
                 raise RuntimeError("Cannot copy built extension because the "
                                    "target directory does not exist. This "
                                    "likely indicates a missing sub-package in "
-                                   "the setup configuration.")
+                                   "the setup configuration.\nMore info:\n"
+                                   "  destpath: '" + str(destpath) + "'\n"
+                                   "  pdir:     '" + str(pdir) + "'")
             destname = (destpath / filename).resolve()
             copy_file((Path(buildpath) / filename).resolve(),
                       destname, verbose=self.verbose,
