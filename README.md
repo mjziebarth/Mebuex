@@ -56,6 +56,10 @@ Mebuex is licensed under the MIT license (see the LICENSE file).
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### [1.1.6] - 2023-08-20
+#### Added
+- Print error message when re-raising assumed compilation error.
+
 ### [1.1.5] - 2023-06-02
 #### Changed
  - Try wiping the build directory if compilation within a previously setup

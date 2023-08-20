@@ -38,6 +38,7 @@ class build_ext(build_ext_st):
                 # of meson and need to be wiped:
                 if "--wipe" not in str(e.output) or first_setup:
                     # Likely a true compilation error.
+                    print(str(e.output))
                     raise e
 
                 # Try to wipe the build dir and try again:
