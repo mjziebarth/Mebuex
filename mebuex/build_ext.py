@@ -39,6 +39,7 @@ class build_ext(build_ext_st):
                 if "--wipe" not in str(e.output) or first_setup:
                     # Likely a true compilation error.
                     print(str(e.output))
+                    print(str(e.stderr))
                     raise e
 
                 # Try to wipe the build dir and try again:

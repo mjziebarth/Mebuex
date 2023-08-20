@@ -3,7 +3,7 @@ requires = ["setuptools>=61"]
 
 [project]
 name = "mebuex"
-version = "1.1.6"
+version = "1.1.7"
 authors = [
     {name = "Malte J. Ziebarth", email = "mjz.science@fmvkb.de"},
 ]
