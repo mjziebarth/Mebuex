@@ -43,6 +43,20 @@ setup(name='mypackage',
 )
 ```
 
+### Finding the NumPy include directory
+Mebuex ships with a Python script to discover the system NumPy includes when
+building in the isolated build environment. The `gravelspoon` command that
+helps break out of the build prison can be used in a `meson.build` file as
+follows:
+```python
+incpath_np = run_command(
+  gravelspoon
+)
+
+incdir_np = include_directories([incpath_np])
+```
+
+
 ## Install
 Mebuex can be installed with Pip:
 ```bash
@@ -56,6 +70,11 @@ Mebuex is licensed under the MIT license (see the LICENSE file).
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+### [1.2.0] - 2023-12-29
+#### Added
+- Add the `gravelspoon` command to break out of the setuptools build isolation
+  and find the system NumPy includes.
 
 ### [1.1.7] - 2023-08-20
 #### Added
