@@ -58,9 +58,13 @@ incdir_np = include_directories([incpath_np])
 
 
 ## Install
-Mebuex can be installed with Pip:
+Mebuex can be installed with Pip locally
 ```bash
 pip install .
+```
+or from PyPI:
+```bash
+pip install mebuex
 ```
 
 ## License
