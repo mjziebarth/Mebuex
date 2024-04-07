@@ -100,6 +100,11 @@ class build_ext(build_ext_st):
                 dry_run=self.dry_run
             )
             # end of adapted code from setuptools/command/build_ext.py.
+
+            # Now make the destination paths available:
+            ext.mebuex_destpath = destpath
+            ext.mebuex_destname = destname
+
         else:
             # Normal build.
             super().build_extension(ext)

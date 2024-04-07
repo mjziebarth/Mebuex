@@ -14,10 +14,15 @@ class MesonExtension(Extension):
     This class assumes that a `meson.build` file resides in
     the root directory of the Python package sources.
     """
+    mebuex_destpath: Path | None
+    mebuex_destname: Path | None
+
     def __init__(self, name, builddir='builddir', compiledname=None):
         self.name = name
         self.builddir = builddir
         self.sourcepath = Path().resolve()
+        self.mebuex_destname = None
+        self.mebuex_destpath = None
         if compiledname is None:
             self.compiledname = name.split('.')[-1]
         else:

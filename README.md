@@ -75,6 +75,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+### [1.3.0] - 2024-04-07
+#### Added
+- Add the `mebuex_destpath` and `mebuex_destname` attributes to the
+  `MebuexExtension` class. This can be used from install scripts, after
+  performing the `build_ext` command, to retrieve the destination path
+  where the extension file was copied to.
+
 ### [1.2.0] - 2023-12-29
 #### Added
 - Add the `gravelspoon` command to break out of the setuptools build isolation
